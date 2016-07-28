@@ -1,0 +1,9 @@
+[user]
+	name = James
+	email = dong.james.sept14@gmail.com
+[credential]
+	helper = /usr/share/git/credential/gnome-keyring/git-credential-gnome-keyring
+[color]
+	ui = true
+[push]
+	default = simple
