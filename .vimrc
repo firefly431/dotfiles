@@ -10,19 +10,19 @@ set expandtab
 set autowrite
 set wildmenu
 set hidden
-set cursorline
+if has("gui_running")
+  set cursorline
+endif
 set undofile
 set ignorecase
 set smartcase
 set gdefault
-set colorcolumn=70
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set cino=:0l1g0(0
 set encoding=utf-8
 set guifont=Fira\ Mono\ for\ Powerline
-set t_Co=256
 set cole=2
 set completeopt-=preview
 set scrolloff=3
@@ -44,6 +44,7 @@ au BufLeave * silent! :wa
 
 map Q gq
 nnoremap ; :
+nnoremap : ;
 nnoremap <silent>j gj
 nnoremap <silent>k gk
 inoremap <C-Space> <C-N>
@@ -73,8 +74,11 @@ endif
 
 if has("gui_running")
   set background=light
+  colorscheme bclear
+else
+  set background=dark
+  colorscheme harlequin
 endif
-colorscheme bclear
 
 hi Conceal guibg=White guifg=#dddddd
 
